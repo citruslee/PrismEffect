@@ -67,11 +67,13 @@ float4 main(float4 Position : SV_POSITION, float2 TexCoord : TEXCOORD0) : SV_TAR
 
 	float4 Rect = lerp(TopLeftSample, TopRightSample, smoothstep(0.5 - SmoothingDistance, 0.5 + SmoothingDistance, OrigTexCoord.x));
 	
+	//these can be precalculated, because they are constants
 	float TriangleY = 0.3;
 	float2 A1 = float2(0.0, TriangleY + 0.2);
 	float2 B1 = float2(0.5, TriangleY);
 	float2 A2 = float2(1.0, TriangleY + 0.2);
 
+	//these too
 	float2 N1 = LineNormal(A1, B1);
 	float2 N2 = LineNormal(B1, A2);
 
