@@ -44,13 +44,6 @@ void FPrismEffect::OnGui() noexcept
 	{
 		ReloadTexture(DXGI_FORMAT_R8G8B8A8_UNORM, InputTexture);
 	}
-	ImGui::SameLine();
-	if (ImGui::Button("Reload Shader"))
-	{
-		InternalRenderer.DestroyShader(PrismShader);
-		auto Result = InternalRenderer.CreateVertexShader(L"FullScreenTriangleVS.hlsl", "main", nullptr, 0, PrismShader);
-		Result = InternalRenderer.CreatePixelShader(L"PrismEffect.hlsl", "main", PrismShader);
-	}
 
 	ImGui::SliderFloat2("Offset", static_cast<float*>(&PrismParams.XOffset), -0.03f, 0.03f);
 	ImGui::SliderFloat("Smoothing Distance", static_cast<float*>(&PrismParams.SmoothingDistance), 0.00f, 0.5f);
