@@ -44,7 +44,7 @@ void FApplication::OnGui() noexcept
 		{
 			Io.WantCaptureMouse = Io.WantCaptureKeyboard = false;
 		}
-		const auto RenderTarget = PrismEffect.GetResult();
+		const auto& RenderTarget = PrismEffect.GetResult();
 		const auto AspectRatio = static_cast<float>(RenderTarget.Width) / static_cast<float>(RenderTarget.Height);
 		const auto WindowSize = ImGui::GetWindowSize();
 		auto CursorPosition = ImGui::GetCursorPos();

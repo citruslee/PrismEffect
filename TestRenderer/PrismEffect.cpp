@@ -7,12 +7,14 @@
 
 FPrismEffect::FPrismEffect(FRenderer& Renderer) : InternalRenderer(Renderer)
 {
+
 }
 
 FPrismEffect::~FPrismEffect()
 {
 	InternalRenderer.DestroyShader(PrismShader);
 	InternalRenderer.DestroyTexture(InputTexture);
+	InternalRenderer.DestroyRenderTarget(FinalRenderTarget);
 	InternalRenderer.DestroyBuffer(PrismConstantBuffer);
 }
 
